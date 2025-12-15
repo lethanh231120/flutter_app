@@ -1,0 +1,70 @@
+[
+  {
+    "id": "1",
+    "driveImage": "styles/images/background.jpg",
+    "owner": "Nam Trang",
+    "startPoint": "Ngọc đới, Quảng Phúc, Quảng Xương, Thanh Hóa",
+    "endPoint": "CN1 Bắc Từ Liêm, Hà Nội",
+    "startTime": "10:30",
+    "price": "120000",
+    "startProvince": {
+      "id": 36,
+      "name": "Thanh Hóa"
+    },
+    "endProvince": {
+      "id": 29,
+      "name": "Hà Nội"
+    }
+  },
+  {
+    "id": "2",
+    "driveImage": "styles/images/background.jpg",
+    "owner": "Thành Lan",
+    "startPoint": "Quảng Vọng, Quảng Xương, Thanh Hóa",
+    "endPoint": "Số 17 Tôn Thất Thuyết, Mỹ Ddình Hà Nội",
+    "startTime": "10:30",
+    "price": "120000",
+    "startProvince": {
+      "id": 15,
+      "name": "Hải Phòng"
+    },
+    "endProvince": {
+      "id": 29,
+      "name": "Hà Nội"
+    }
+  },
+  {
+    "id": "3",
+    "driveImage": "styles/images/background.jpg",
+    "owner": "Nam Trang",
+    "startPoint": "Ngọc đới, Quảng Phúc, Quảng Xương, Thanh Hóa",
+    "endPoint": "CN1 Bắc Từ Liêm, Hà Nội",
+    "startTime": "10:30",
+    "price": "120000",
+    "startProvince": {
+      "id": 15,
+      "name": "Hải Phòng"
+    },
+    "endProvince": {
+      "id": 29,
+      "name": "Hà Nội"
+    }
+  },
+  {
+    "id": "4",
+    "driveImage": "styles/images/background.jpg",
+    "owner": "Thành Lan",
+    "startPoint": "Quảng Vọng, Quảng Xương, Thanh Hóa",
+    "endPoint": "Số 17 Tôn Thất Thuyết, Mỹ đình Hà Nội",
+    "startTime": "10:30",
+    "price": "120000",
+    "startProvince": {
+      "id": 36,
+      "name": "Thanh Hóa"
+    },
+    "endProvince": {
+      "id": 29,
+      "name": "Hà Nội"
+    }
+  }
+]
