@@ -8,7 +8,9 @@ import 'package:my_app/features/book_ticket/book_ticket.dart';
 import 'package:my_app/features/chat/chat_detail.dart';
 import 'package:my_app/features/detail_trip/detail_trip_driver.dart';
 import 'package:my_app/features/driver_info/driver_info.dart';
+import 'package:my_app/features/home/home_page_drive.dart';
 import 'package:my_app/features/notification/notification.dart';
+import 'package:my_app/features/register-route/register_route.dart';
 import 'package:my_app/main_layout.dart';
 import 'package:my_app/main_screen.dart';
 import '../features/home/home_page.dart';
@@ -31,6 +33,7 @@ const List<String> exceptionRoutes = [
   '/trips',
   '/notification',
   '/drive-info',
+  '/register_route',
 ];
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 final goRouter = GoRouter(
@@ -91,8 +94,16 @@ final goRouter = GoRouter(
           },
         ),
         GoRoute(path: '/home', builder: (context, state) => HomePage()),
+        GoRoute(
+          path: '/home_drive',
+          builder: (context, state) => HomePageDrive(),
+        ),
         GoRoute(path: '/trips', builder: (context, state) => TripRoute()),
         GoRoute(path: '/chat', builder: (context, state) => ChatPage()),
+        GoRoute(
+          path: '/register_route',
+          builder: (context, state) => RegisterRoute(),
+        ),
         GoRoute(
           path: '/notification',
           builder: (context, state) => NotificationPage(),
@@ -137,6 +148,7 @@ final goRouter = GoRouter(
       '/trip',
       '/trip_drive',
       '/book-ticket',
+      '/register_route',
     ].contains(state.matchedLocation);
 
     final isException = exceptionRoutes.any((r) => path.startsWith(r));

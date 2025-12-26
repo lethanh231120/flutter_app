@@ -5,8 +5,9 @@ import 'package:my_app/models/trip.dart';
 import 'package:my_app/models/evaluate.dart';
 import 'package:my_app/widgets/AppButton.dart';
 import 'package:my_app/widgets/AppSelect.dart';
-import 'package:my_app/widgets/evaluate.dart';
+import 'package:my_app/widgets/AppSwicth.dart';
 import 'profile_item.dart';
+import 'package:go_router/go_router.dart';
 
 class JobPosition {
   final String id;
@@ -28,7 +29,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  bool isSwitched = false; // state
+  bool isSendNoti = false; // state
   final List<Trip> cars = [
     Trip(
       id: '1',
@@ -176,7 +177,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               icon: 'assets/icons/car_primary.png',
                               text: 'Đăng ký chuyến xe',
                               arrow: 'assets/icons/arrow_right.png',
+                              onTab: () => context.push('/register_route'),
                             ),
+                            SizedBox(height: 8),
 
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -185,28 +188,29 @@ class _ProfilePageState extends State<ProfilePage> {
                                   'Gửi thông báo',
                                   style: GlobalStyles.textBold14,
                                 ),
-                                Switch(
-                                  value: isSwitched,
-                                  onChanged: (value) {
-                                    setState(() => isSwitched = value);
-                                  },
+                                AppSwitch(
+                                  value: isSendNoti,
+                                  width: 50,
+                                  height: 28,
                                   activeColor: AppColors.primary,
-                                  inactiveThumbColor: AppColors.grey,
-                                  inactiveTrackColor: Colors.black12,
+                                  inactiveColor: Colors.grey.shade400,
+                                  onChanged: (v) {
+                                    setState(() => isSendNoti = v);
+                                  },
                                 ),
                               ],
                             ),
-                            SizedBox(height: 8),
+                            SizedBox(height: 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('Vai trò', style: GlobalStyles.textBold14),
                                 AppSelect(
                                   placeholder: "Vai trò",
-                                  backgroundColor: AppColors.white,
                                   height: 30,
                                   width: 145,
                                   border: true,
+                                  padding: 8,
                                   value: '1',
                                   items: jobPositions
                                       .map(

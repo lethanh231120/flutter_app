@@ -20,9 +20,8 @@ class _TripRowItem extends State<TripRowItem> {
     final size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
-        print("Bạn vừa bấm!");
-        widget.hasTab ? context.push('/trip_drive/234') : null;
-        // widget.hasTab ? context.push('/trip/234') : null;
+        // widget.hasTab ? context.push('/trip_drive/234') : null;
+        widget.hasTab ? context.push('/trip/234') : null;
       },
       child: Container(
         width: size.width,

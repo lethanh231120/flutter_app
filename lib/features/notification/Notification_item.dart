@@ -112,64 +112,6 @@ class _NotificationItem extends State<NotificationItem> {
             ),
           ],
         ),
-        // Row(
-        //   children: [
-        //     SizedBox(
-        //       child: Container(
-        //         width: 60,
-        //         height: 60,
-        //         decoration: BoxDecoration(
-        //           borderRadius: BorderRadius.circular(10),
-        //           image: DecorationImage(
-        //             image: AssetImage(widget.notiItem.userAvatar),
-        //             fit: BoxFit.cover,
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-        //     SizedBox(width: 8),
-        //     Expanded(
-        //       child: Column(
-        //         crossAxisAlignment: CrossAxisAlignment.start,
-        //         children: [
-        //           Row(
-        //             children: [
-        //               Text(
-        //                 widget.notiItem.userPhone!,
-        //                 style: GlobalStyles.textBold14.copyWith(
-        //                   color: widget.notiItem.status == 1
-        //                       ? AppColors.semiBlack
-        //                       : AppColors.black,
-        //                 ),
-        //                 softWrap: true,
-        //               ),
-        //               SizedBox(width: 8),
-
-        //               Spacer(),
-        //               Text(
-        //                 widget.notiItem.time,
-        //                 style: GlobalStyles.textBold12.copyWith(
-        //                   color: widget.notiItem.status == 1
-        //                       ? AppColors.semiBlack
-        //                       : AppColors.black,
-        //                 ),
-        //                 softWrap: true,
-        //               ),
-        //             ],
-        //           ),
-
-        //           Text(
-        //             widget.notiItem.message,
-        //             style: GlobalStyles.textBold12.copyWith(
-        //               color: AppColors.semiBlack,
-        //             ),
-        //             softWrap: true,
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ],
-        // ),
       ),
     );
   }

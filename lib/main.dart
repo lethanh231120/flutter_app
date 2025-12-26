@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      routerConfig: goRouter, // ← CHỈ 1 DÒNG NÀY LÀ XONG!
+      routerConfig: goRouter,
     );
   }
 }

@@ -113,26 +113,9 @@ class _VerifyOtpPageState extends State<VerifyOtpPage> {
                 label: "Xác nhận",
                 type: ButtonType.primary,
                 onPressed: () async {
-                  // navigateToPage(context, const HomePage());
-                  // bool success = await verifyOtp(); // hàm của bạn
-
-                  // if (context.mounted) {
-                  // if (success && context.mounted) {
-                  // Đẩy về MainLayout + chọn tab Trang chủ
-                  // Navigator.of(context).pushAndRemoveUntil(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const MainLayout(),
-                  //   ),
-                  //   (route) => false, // xóa hết stack cũ → sạch sẽ
-                  // );
-                  // }
-                  print('verify');
-                  // context.go('/home');
                   GoRouter.of(
                     context,
                   ).go('/home', extra: {'bypassLogin': true});
-                  // GoRouter.of(context).go('/home');
-                  // rootNavigatorKey.currentState!.context!.go('/home');
                 },
               ),
               SizedBox(height: 20),

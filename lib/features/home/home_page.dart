@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 24,
                                 height: 24,
                               ),
-                              onTap: () => context.go('/notification'),
+                              onTap: () => context.push('/notification'),
                             ),
                           ],
                         ),
@@ -135,7 +135,6 @@ class _HomePageState extends State<HomePage> {
                             Expanded(
                               child: AppSelect(
                                 placeholder: "Chọn giờ",
-                                backgroundColor: AppColors.white,
                                 height: 45,
                                 prefixIcon: Image.asset(
                                   "assets/icons/waiting.png",

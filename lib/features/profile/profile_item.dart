@@ -7,24 +7,22 @@ class ItemProfileInfo extends StatelessWidget {
   final String text;
   final String arrow;
   final double? size;
-  final String? urlRedirect;
+  // final String? urlRedirect;
+  final VoidCallback? onTab;
 
   const ItemProfileInfo({
     required this.icon,
     required this.text,
     required this.arrow,
     this.size = 22,
-    this.urlRedirect,
+    // this.urlRedirect,
+    this.onTab,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        if (urlRedirect != null) {
-          context.push(urlRedirect!);
-        }
-      },
+      onTap: onTab,
       child: Row(
         children: [
           Image.asset(icon, width: size, height: size, fit: BoxFit.cover),

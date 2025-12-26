@@ -204,49 +204,39 @@ class _TripRouteState extends State<TripRoute> {
                 ),
                 SizedBox(height: 10),
                 Expanded(
-                  child: Stack(
-                    children: [
-                      Scrollbar(
-                        child: SingleChildScrollView(
-                          child: Padding(
-                            padding: EdgeInsetsGeometry.fromLTRB(
-                              12,
-                              12,
-                              12,
-                              60,
+                  child: Scrollbar(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: EdgeInsetsGeometry.fromLTRB(12, 12, 12, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            TripGroup(
+                              widthContainer: size.width,
+                              items: tripsCurrDay,
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                TripGroup(
-                                  widthContainer: size.width,
-                                  items: tripsCurrDay,
-                                ),
-                                SizedBox(height: 10),
-                                TripGroup(
-                                  widthContainer: size.width,
-                                  items: tripsComing,
-                                ),
-                                SizedBox(height: 10),
-                                TripGroup(
-                                  widthContainer: size.width,
-                                  items: tripsHistory,
-                                ),
-                              ],
+                            SizedBox(height: 10),
+                            TripGroup(
+                              widthContainer: size.width,
+                              items: tripsComing,
                             ),
-                          ),
+                            SizedBox(height: 10),
+                            TripGroup(
+                              widthContainer: size.width,
+                              items: tripsHistory,
+                            ),
+                          ],
                         ),
                       ),
-                      Positioned(
-                        bottom: 8,
-                        left: 12,
-                        right: 12,
-                        child: AppButton(
-                          label: 'Tìm kiếm xe',
-                          onPressed: () => context.push('/home'),
-                        ),
-                      ),
-                    ],
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  width: double.infinity,
+                  child: AppButton(
+                    height: 40,
+                    label: 'Tổng tiền mặt phải thu: 1.234.567 đ',
                   ),
                 ),
               ],
@@ -287,10 +277,13 @@ class TripGroup extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             itemCount: items.length,
             itemBuilder: (context, index) {
-              return CarInfo(
-                trip: items[index],
-                type: 'trip',
-                onAction: () => context.push('/trip/2'),
+              return Container(
+                margin: EdgeInsets.only(bottom: 8),
+                child: CarInfo(
+                  trip: items[index],
+                  type: 'trip',
+                  onAction: () => context.push('/trip/2'),
+                ),
               );
             },
           ),

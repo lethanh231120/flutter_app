@@ -16,6 +16,8 @@ class AppButton extends StatelessWidget {
   final bool loading;
   final VoidCallback? onPressed;
   final String? size;
+  final double height;
+  final double borderRadius;
 
   const AppButton({
     Key? key,
@@ -28,6 +30,8 @@ class AppButton extends StatelessWidget {
     this.loading = false,
     this.onPressed,
     this.size = 'default',
+    this.height = 45,
+    this.borderRadius = 25,
   }) : super(key: key);
 
   Color get _bgColor {
@@ -70,27 +74,27 @@ class AppButton extends StatelessWidget {
     };
 
     final bool canClick = enabled && !loading && onPressed != null;
+    final paddingBtn = (height - 16) / 2;
 
     return Opacity(
       opacity: enabled ? 1.0 : 0.5,
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          // borderRadius: type == ButtonType.underline
-          //     ? null
-          //     : BorderRadius.circular(25),
           onTap: canClick ? onPressed : null,
           child: Container(
-            constraints: BoxConstraints(minHeight: size == 'small' ? 0 : 45),
+            constraints: BoxConstraints(
+              minHeight: size == 'small' ? 0 : height,
+            ),
             padding: EdgeInsets.symmetric(
-              vertical: size == 'small' ? 0 : 16,
+              vertical: size == 'small' ? 0 : paddingBtn,
               horizontal: type == ButtonType.underline ? 0 : 6,
             ),
             decoration: BoxDecoration(
               color: _bgColor,
               borderRadius: type == ButtonType.underline
                   ? null
-                  : BorderRadius.circular(25),
+                  : BorderRadius.circular(borderRadius),
               border: borderStyles[type],
             ),
             child: Row(

@@ -17,10 +17,8 @@ class _TripColumnItem extends State<TripColumnItem> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("Bạn vừa bấm!");
-        // Navigator.of(context).pushNamed('/detail', arguments: widget.trip);
-        // context.push('/trip/234');
-        context.push('/trip_drive/234');
+        context.push('/trip/234');
+        // context.push('/trip_drive/234');
       },
       child: Container(
         decoration: BoxDecoration(

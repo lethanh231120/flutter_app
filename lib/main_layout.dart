@@ -48,7 +48,8 @@ class _MainLayoutState extends State<MainLayout> {
     setState(() => _currentIndex = index);
     switch (index) {
       case 0:
-        context.push('/home');
+        context.push('/home_drive');
+        // context.push('/home');
         break;
       case 1:
         context.push('/trips');
